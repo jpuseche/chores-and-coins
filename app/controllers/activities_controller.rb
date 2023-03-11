@@ -1,4 +1,6 @@
 class ActivitiesController < ApplicationController
+  before_action :find_activity, only: [:show, :edit, :update, :destroy]
+
   def index
     @activities = Activity.all
   end
@@ -43,13 +45,15 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
-
     redirect_to root_path, status: :see_other
   end
 
   private
+    def find_activity
+      @activity = Activity.find(params[:id])
+    end
+
     def activity_params
       params.require(:activity).permit(:name, :description, :user_id, :completed, :level)
     end
-
 end
