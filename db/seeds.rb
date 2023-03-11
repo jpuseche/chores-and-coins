@@ -3,5 +3,11 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Activity.create([
+  { name: "Doblar Ropa", description: "" },
+  { name: "Barrer y Trapear", description: "" },
+  { name: "Lavar los platos", description: "" },
+  { name: "Alimentar mascota", description: "" },
+  { name: "Limpiar arena de gatos", description: "" },
+  { name: "Limpiar jaula Aves", description: "" },
+])
