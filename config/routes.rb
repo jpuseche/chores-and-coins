@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'income/index'
   root "dashboard#index"
 
   resources :activities
@@ -9,4 +8,6 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboard#index"
   get "/activities", to: "activities#index"
   get "/income", to: "income#index"
+
+  put "/activities/:id/assign_task", to: "activities#assign_task", as: "assign_task"
 end
