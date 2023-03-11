@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get "/dashboard", to: "dashboard#index"
-
   root "dashboard#index"
 
+  devise_for :users
+
+  get "/dashboard", to: "dashboard#index"
   get "/activities", to: "activities#index"
 end

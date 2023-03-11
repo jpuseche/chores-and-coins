@@ -4,3 +4,7 @@
     <p><%= link_to "dashboard", "dashboard" %></p>
     <p><%= link_to "activities", "activities" %></p>
 </div>
+
+<% if user_signed_in? %>
+  <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" %>
+<% end %>
