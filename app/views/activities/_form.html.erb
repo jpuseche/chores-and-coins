@@ -1,0 +1,25 @@
+<%= form_with model: @activity do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
+  
+    <div>
+      <%= form.label :description %><br>
+      <%= form.text_area :description %>
+    </div>
+
+    <div>
+      <%= form.label :completed %><br>
+      <%= form.check_box :completed %>
+    </div>
+
+    <div>
+      <%= form.label :level %><br>
+      <%= form.text_field :level %>
+    </div>
+  
+    <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <%= form.submit %>
+    </div>
+  <% end %>

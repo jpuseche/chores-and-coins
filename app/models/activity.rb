@@ -1,6 +1,6 @@
 class Activity < ApplicationRecord
   validates :name, presence: true
-  # validates :user_id, presence: true
-  # validates :completed, presence: true
-  # validates :level, presence: true
+  validates :description, presence: true
+  validates :user_id, presence: true
+  validates :level, numericality: { only_integer: true }
 end

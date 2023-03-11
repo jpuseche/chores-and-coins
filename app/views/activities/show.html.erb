@@ -2,8 +2,26 @@
   <%= render "dashboard/navbar" %>
 
   <h1 class="text-3xl font-bold"><%= @activity.name %></h1>
+  
+  <div class="flex">
+    <p>description:</p>
+    <p class="mx-2"><%= @activity.description %></p>
+  </div>
 
-  <p><%= @activity.description %></p>
+  <div class="flex">
+    <p>assigned to:</p>
+    <p class="mx-2"><%= @user.email %></p>
+  </div>
+
+  <div class="flex">
+    <p>completion:</p>
+    <p class="mx-2"><%= @activity.completed %></p>
+  </div>
+
+  <div class="flex">
+    <p>activity level:</p>
+    <p class="mx-2"><%= @activity.level %></p>
+  </div>
 
   <ul>
   <li><%= link_to "Edit", edit_activity_path(@activity) %></li>
