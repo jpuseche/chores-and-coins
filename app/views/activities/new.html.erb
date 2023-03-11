@@ -1,22 +1,8 @@
-
-<div class="flex-col">
+<div class="flex flex-col">
     <%= render "dashboard/navbar" %>
 
-    <h1 class="text-3xl font-bold my-5">New Activity</h1>
-
-    <%= form_with model: @activity do |form| %>
-    <div>
-        <%= form.label :name %><br>
-        <%= form.text_field :name %>
+    <h1 class="text-3xl font-bold my-5 text-center">New Activity</h1>
+    <div class="flex justify-center">
+        <%= render "form", activity: @activity %>
     </div>
-
-    <div>
-        <%= form.label :description %><br>
-        <%= form.text_area :desription %>
-    </div>
-
-    <div class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-        <%= form.submit %>
-    </div>
-    <% end %>
 </div>

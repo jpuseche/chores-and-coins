@@ -5,8 +5,16 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all
   end
 
+  def show
+    @users = User.all
+  end
+
   def new
     @activity = Activity.new
+  end
+
+  def assign_task
+    @activity.user_id = params[:user_id]
   end
 
   def create
