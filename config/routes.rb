@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root "dashboard#index"
 
-  get "/activities", to: "activities#index"
+  resources :activities
 end

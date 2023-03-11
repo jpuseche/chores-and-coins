@@ -1,0 +1,15 @@
+<div class="flex-col">
+  <%= render "dashboard/navbar" %>
+
+  <h1 class="text-3xl font-bold"><%= @activity.name %></h1>
+
+  <p><%= @activity.description %></p>
+
+  <ul>
+  <li><%= link_to "Edit", edit_activity_path(@activity) %></li>
+  <li><%= link_to "Destroy", activity_path(@activity), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+  </ul>
+</div>
