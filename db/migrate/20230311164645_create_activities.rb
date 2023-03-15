@@ -6,6 +6,7 @@ class CreateActivities < ActiveRecord::Migration[7.0]
       t.integer :user_id
       t.boolean :completed
       t.integer :level
+      t.string :status
 
       t.timestamps
     end

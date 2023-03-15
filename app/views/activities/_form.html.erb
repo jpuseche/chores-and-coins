@@ -12,6 +12,7 @@
     <div class="mb-5">
       <%= form.label :level %>
       <%= form.text_field :level, class: "w-full rounded" %>
+      <%= @activity.errors.full_messages %>
     </div>
 
     <div class="bg-[#4237CA] hover:bg-[#4237CA] cursor-pointer text-white font-bold py-2 w-40 text-center mx-auto px-4 mt-10 rounded">

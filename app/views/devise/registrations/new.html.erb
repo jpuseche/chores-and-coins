@@ -1,5 +1,5 @@
 <div class="flex">
-  <div class="lg:w-1/2 w-full h-screen bg-purple-800">
+  <div class="lg:w-1/2 w-full h-screen bg-[#131226]">
   </div>
   <div class="lg:w-1/2 w-full h-screen flex items-center justify-center">
     <div class="w-full max-w-sm">
@@ -32,10 +32,10 @@
         </div>
 
         <div class="flex flex-col gap-3">
-          <%= f.submit "Sign up", class: "bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded w-full mt-3 cursor-pointer" %>
+          <%= f.submit "Sign up", class: "bg-[#131226] hover:bg-purple-700 text-white font-bold py-2 px-4 rounded w-full mt-3 cursor-pointer" %>
 
           <%- if controller_name != 'sessions' %>
-            <%= link_to "Log in", new_session_path(resource_name), class: "text-center bg-purple-500 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded cursor-pointer" %>
+            <%= link_to "Log in", new_session_path(resource_name), class: "text-center bg-[#131226] hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded cursor-pointer" %>
           <% end %>
           <%= render "devise/shared/links" %>
         </div>

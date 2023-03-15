@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get "/activities", to: "activities#index"
   get "/income", to: "income#index"
 
-  put "/activities/:id/assign_task", to: "activities#assign_task", as: "assign_task"
+  get "/activities/:id/assign_task", to: "activities#assign_task", as: "assign_task"
 end
