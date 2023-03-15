@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_164645) do
     t.integer "user_id"
     t.boolean "completed"
     t.integer "level"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

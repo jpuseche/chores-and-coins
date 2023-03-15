@@ -3,11 +3,12 @@
 #
 # Examples:
 #
-Activity.create([
-  { name: "Doblar Ropa", description: "" },
-  { name: "Barrer y Trapear", description: "" },
-  { name: "Lavar los platos", description: "" },
-  { name: "Alimentar mascota", description: "" },
-  { name: "Limpiar arena de gatos", description: "" },
-  { name: "Limpiar jaula Aves", description: "" },
-])
+
+puts "Seeding..."
+Activity.create(name: "Doblar Ropa", description: "", level: "1", status: "created")
+Activity.create(name: "Barrer y Trapear", description: "", level: "1", status: "created")
+Activity.create(name: "Lavar los platos", description: "", level: "1", status: "created")
+Activity.create(name: "Alimentar mascota", description: "", level: "1", status: "created")
+Activity.create(name: "Limpiar arena de gatos", description: "", level: "1", status: "created")
+Activity.create(name: "Limpiar jaula Aves", description: "", level: "1", status: "created")
+puts "Seeding done."

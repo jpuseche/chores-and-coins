@@ -6,4 +6,8 @@ export default class extends Controller {
   openModal() {
     this.assignTaskTarget.classList.remove('hidden')
   }
+
+  closeModal() {
+    this.assignTaskTarget.classList.add('hidden')
+  }
 }
