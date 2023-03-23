@@ -1,0 +1,12 @@
+<div class="px-20 mt-10">
+  <ul class="flex">
+    <li><%= link_to "Dashboard", root_path %> </li>
+    <span class="mx-2">></span>
+    <li><%= link_to "Sons", root_path %></li>
+  </ul>
+</div>
+
+<div class="bg-gray-50 border rounded p-10 w-1/3 mx-20 mt-10">
+  <h1 class="text-3xl font-bold my-5">New Son</h1>
+  <%= render "form", son: @son %>
+</div>
