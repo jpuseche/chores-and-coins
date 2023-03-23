@@ -1,19 +1,8 @@
 class User < ApplicationRecord
-  has_many :activities do
-    def income
-      allActivities = self.activities
+  validates_presence_of :first_name, :last_name, :email, :gender, :phone
 
-      income = 0
-      for activity in allActivities do
-        @income = activity.level * 1000 + @income
-      end
-
-      income = @income.to_s.reverse.scan(/\d{1,3}/).join(",").reverse
-
-      return income
-    end
-  end
-
+  has_many :activities
+  has_many :sons
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -21,6 +10,17 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def user_name
-    return first_name + last_name
+    first_name + last_name
+  end
+
+  def income
+    activities = Activity.where(user_id: self.id, status: "completed").all
+
+    income = 0
+    activities.each do |activity|
+      income = activity.level * 1000 + income
+    end
+
+    income = income.to_s.reverse.scan(/\d{1,3}/).join(",").reverse
   end
 end

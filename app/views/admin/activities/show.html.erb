@@ -1,5 +1,5 @@
-<div data-controller="show-activities">
-  <div class="px-20 flex flex-col py-20 border mx-20 mt-20">
+<div data-controller="show-activities" class="bg-white px-96">
+  <div class="flex flex-col py-20 mt-20">
     <h1 class="text-3xl font-bold"><%= @activity.name %></h1>
 
     <div class="flex mt-3">
@@ -16,7 +16,7 @@
 
     <% if @activity.completed %>
       <div class="flex mt-5">
-        <p class="text-1xl font-bold">Comleted at: </p>
+        <p class="text-1xl font-bold">Completed at: </p>
         <p class="mx-2"><%= @activity.completed %></p>
       </div>
     <% end %>
@@ -26,19 +26,17 @@
       <p class="mx-2"><%= @activity.level %></p>
     </div>
 
-
     <div class="flex justify-end gap-3">
       <button class="bg-[#131226] rounded text-white px-5 py-2", data-action="click->show-activities#openModal">Assign Task</button>
-      <%= link_to "Edit", edit_activity_path(@activity), class: "bg-blue-700 rounded text-white px-5 py-2" %>
-      <%= link_to "Destroy", activity_path(@activity), class: "bg-red-700 rounded text-white px-5 py-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      <%= link_to "Edit", edit_admin_activity_path(@activity), class: "bg-blue-700 rounded text-white px-5 py-2" %>
+      <%= link_to "Destroy", admin_activity_path(@activity), class: "bg-red-700 rounded text-white px-5 py-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
     </div>
   </div>
-
 
   <div class="relative z-10 hidden" data-show-activities-target="assignTask" aria-labelledby="modal-title" role="dialog" aria-modal="true">
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
-    <%= form_with url: assign_task_path(@activity.id), method: :get do |form| %>
+    <%= form_with url: admin_assign_task_path(@activity.id), method: :get do |form| %>
       <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
           <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
@@ -51,7 +49,7 @@
                 </div>
                 <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                   <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">Assign Task to my son</h3>
-                  <select name="user_id_to_assing" class="block mt-2 w-full rounded-md bg-white border border-gray-300 pl-2 pr-10 py-2 text-sm leading-5 font-medium text-gray-700 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  <select name="user_id_to_assign" class="block mt-2 w-full rounded-md bg-white border border-gray-300 pl-2 pr-10 py-2 text-sm leading-5 font-medium text-gray-700 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                     <% @users.each do |user| %>
                       <option value="<%= user.id %>"><%= user.email %></option>
                     <% end %>

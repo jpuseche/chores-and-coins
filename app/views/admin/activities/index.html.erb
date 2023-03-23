@@ -1,0 +1,51 @@
+<div class="flex">
+  <div class="flex flex-col w-full">
+    <div class="border-r-2 px-0 w-full px-96 bg-slate-100 flex flex-col gap-3 text-4xl items-center justify-center py-10 px-5">
+      <h1 class="font-extrabold">Your payment for your sons </h1>
+      <span class="font-extrabold text-emerald-400">$<%= current_user.income %></span>
+    </div>
+    <div class="w-full px-96">
+      <div class="py-5">
+        <h1 class="text-2xl font-bold mb-2">Welcome back, <%= current_user.user_name %></h1>
+        <p>Create new activities and assign these activities to your sons</p>
+      </div>
+      <div class="flex flex-col pb-10 pt-10 gap-3 border-b-2 text-sm">
+        <h2 class="text-1xl font-bold">Where to start?</h2>
+        <div class="flex gap-3">
+          <%= link_to new_admin_activity_path, class: "bg-[#4237CA] h-28 rounded-lg overflow-hidden w-48 rounded-lg hover:bg-[#6860db] cursor-pointer hover:scale-105 transition ease-in-out duration-300" do %>
+            <div class="flex justify-center items-center h-full">
+              <h2 class="text-white font-bold">New Activity</h2>
+            </div>
+          <% end %>
+
+          <%= link_to admin_sons_new_path, class: "bg-[#4237CA] h-28 rounded-lg overflow-hidden w-48 rounded-lg hover:bg-[#6860db] cursor-pointer hover:scale-105 transition ease-in-out duration-300" do %>
+            <div class="flex justify-center items-center h-full">
+              <h2 class="text-white font-bold">New Son</h2>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <section class="px-20 bg-[#F8F9FC] py-10 rounded">
+        <div class="flex flex-col mb-10 gap-3">
+          <input type="text" placeholder="Search by name" class="rounded h-10 w-80">
+        </div>
+
+        <%= render "admin/activities/badges" %>
+
+        <div class="grid grid-cols-2 gap-7">
+          <% @activities.each do |activity| %>
+            <%= link_to admin_activity_path(activity.id), class: "flex pr-10 text-xs bg-white border h-24 overflow-hidden rounded-lg hover:scale-105 transition ease-in-out duration-300" do %>
+              <div class="w-10 <%= activity_status(activity) %>"></div>
+              <div class="flex flex-col justify-center ml-3">
+                <h2 class="font-bold"><%= activity.name %></h2>
+                <p class="text-gray-400 mt-1">Level: <%= activity.level %></p>
+                <p class="text-gray-500 mt-1">Status: <%= activity.status %></p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

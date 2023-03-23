@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>ChoresAndCoins</title>
+    <title>Chores And Coins - Sons</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,11 +12,7 @@
   </head>
 
   <body>
-    <main class="bg-[#E7E9F2] h-screen">
-      <% if user_signed_in? %>
-        <%= render "dashboard/navbar" %>
-      <% end %>
-
+    <main>
       <%= yield %>
     </main>
   </body>

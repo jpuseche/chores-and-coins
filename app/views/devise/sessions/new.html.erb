@@ -39,6 +39,10 @@
         <div class="flex flex-col gap-3">
           <%= f.submit "Log in", class: "bg-[#131226] hover:bg-purple-700 text-white font-bold py-2 px-4 rounded w-full mt-3 cursor-pointer" %>
 
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <p class="text-sm text-center">Don't you have an account yet?<br> <%= link_to "Request your account", new_registration_path(resource_name), class: "font-bold text-[#131226]" %></p>
+          <% end %>
+
           <%= render "devise/shared/links" %>
         </div>
       <% end %>
